@@ -7,28 +7,38 @@ import {
   makeStyles,
   Avatar,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: theme.spacing(10),
-    display: "flex",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: theme.spacing(2),
+    backgroundColor: '#2E2E38',
+
     
+  },
+  color:{
+    backgroundColor: '#2E2E38',
   },
  logo: {
     flexGrow: "1",
     cursor: "pointer",
+    marginRight: theme.spacing(50),
+    justifyContent: 'space-between',
+    backgroundColor: '#2E2E38',
+    
    
   },
   link: {
     textDecoration: "none",
+    justifyContent: 'space-between',
     color: "white",
     fontSize: "20px",
-    marginLeft: theme.spacing(20),
-    "&:hover": {
-      color: "yellow",
-      borderBottom: "1px solid white",
-    },
+    backgroundColor: '#2E2E38',
+    marginLeft: theme.spacing(40),
+    marginRight: theme.spacing(5),
   },
 }));
 
@@ -36,20 +46,23 @@ function Header() {
   const classes = useStyles();
 
   return (
-    <AppBar position="static">
+    
+    <AppBar position="static" className={classes.color}>
       <CssBaseline />
       <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-          Navbar
-        </Typography>
+        <Typography className={classes.logo}></Typography>
           <div className={classes.navlinks}>
-            <Link to="/faq" className={classes.link}>
+            <Typography className={classes.link}>
               Manager
-            </Link>
+              </Typography>
+              <Typography className={classes.link}>
+              manager@ey.com
+              </Typography>
+          
             <Avatar
                 alt="Remy Sharp"
-                src="https://cdn-icons-png.flaticon.com/512/7542/7542296.png"
-                sx={{ width: 56, height: 56 }}
+                src="https://cdn-icons-png.flaticon.com/512/7153/7153080.png"
+                sx={{ width: 80, height: 80 }}
                 />
           </div>
       </Toolbar>

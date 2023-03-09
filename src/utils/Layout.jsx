@@ -18,20 +18,24 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    
    
   },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
     
+    
    
   },
+ 
   drawerPaper: {
     width: drawerWidth,
    
   },
   toolbar: theme.mixins.toolbar,
-  backgroundColor: "#FFE600",
+  backgroundColor: '#2E2E38',
+ 
 }));
 
 function Layout({ children }) {
@@ -40,7 +44,9 @@ function Layout({ children }) {
   return (
     <div>
       <Header/>
-    
+    <br/>
+    <br/>
+    <br/>
     <div className={classes.root}>
    
       <Drawer
