@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fontSize: "20px",
     backgroundColor: '#2E2E38',
-    marginLeft: theme.spacing(40),
     marginRight: theme.spacing(5),
   },
 }));
@@ -52,12 +51,16 @@ function Header() {
       <Toolbar>
         <Typography className={classes.logo}></Typography>
           <div className={classes.navlinks}>
-            <Typography className={classes.link}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+           <div style={{  textAlign: 'center',}}>
+            <Typography className={classes.link} variant="h1"  display="block">
               Manager
               </Typography>
-              <Typography className={classes.link}>
+              </div> 
+              <Typography className={classes.link} variant="body1" display="block">
               manager@ey.com
               </Typography>
+              </div>
           
             <Avatar
                 alt="Remy Sharp"
