@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import {
   AppBar,
@@ -8,35 +10,36 @@ import {
   Avatar,
 } from "@material-ui/core";
 
-
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
     padding: theme.spacing(2),
-    backgroundColor: '#2E2E38',
-
-    
+    backgroundColor: "#FFFFFF",
+    marginRight:-16,
   },
-  color:{
-    backgroundColor: '#2E2E38',
+  color: {
+    backgroundColor: "#FFFFFF",
   },
- logo: {
+  logo: {
     flexGrow: "1",
     cursor: "pointer",
     marginRight: theme.spacing(50),
-    justifyContent: 'space-between',
-    backgroundColor: '#2E2E38',
+    marginLeft: 300,
+    position: "relative",
+    zIndex: 100,
+    justifyContent: "space-between",
+    backgroundColor: "#00000",
+    width: 80,
     
-   
   },
   link: {
     textDecoration: "none",
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
     color: "white",
     fontSize: "20px",
-    backgroundColor: '#2E2E38',
+    backgroundColor: "#FFFFFF",
     marginRight: theme.spacing(5),
   },
 }));
@@ -45,29 +48,65 @@ function Header() {
   const classes = useStyles();
 
   return (
-    
-    <AppBar position="static" className={classes.color}>
+    <AppBar position='static' className={classes.color}>
       <CssBaseline />
+
       <Toolbar>
-        <Typography className={classes.logo}></Typography>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
+          }}
+        >
           <div className={classes.navlinks}>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-           <div style={{  textAlign: 'center',}}>
-            <Typography className={classes.link} variant="h1"  display="block">
-              Manager
-              </Typography>
-              </div> 
-              <Typography className={classes.link} variant="body1" display="block">
-              manager@ey.com
-              </Typography>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ textAlign: "center" }}>
+                <div
+                  className={classes.link}
+                  variant='h1'
+                  display='block'
+                  style={{ color: "#2E2E38" }}
+                >
+                  <div className={classes.logo}>
+                    <img
+                      src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/1200px-EY_logo_2019.svg.png'
+                      style={{ width: 50, height: 50,marginLeft:'-190px' }}
+                    />
+                  </div>
+                </div>
               </div>
-          
-            <Avatar
-                alt="Remy Sharp"
-                src="https://cdn-icons-png.flaticon.com/512/7153/7153080.png"
-                sx={{ width: 80, height: 80 }}
-                />
+            </div>
           </div>
+          <div className={classes.navlinks}>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ textAlign: "center" }}>
+                <Typography
+                  className={classes.link}
+                  variant='h5'
+                  display='block'
+                  style={{ color: "#2E2E38",fontSize: 18 }}
+                >
+                  Manager
+                </Typography>
+              </div>
+              <Typography
+                className={classes.link}
+                variant="filled"
+                display='block'
+                style={{ color: "#2E2E38",fontSize: 16, }}
+              >
+                manager@ey.com
+              </Typography>
+            </div>
+
+            <Avatar
+              alt='manager'
+              src='https://cdn-icons-png.flaticon.com/512/7542/7542296.png'
+              style={{ width: 40, height: 40 }}
+            />
+          </div>
+        </div>
       </Toolbar>
     </AppBar>
   );
